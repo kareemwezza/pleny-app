@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>{{ title }}</h1>
+    <div class="breadcrumb">
+        <span>Home</span>
+        <span>Products</span>
+        <span>{{ title === 'Products' ? 'All products' : title }}</span>
+    </div>
+    <div class="products">
+        <div class="category-list">
+            <h3>Products</h3>
+            <ul>
+                <li>
+                    <input type="radio" id="all" name="category"
+                           value="" checked (change)="handleCategoryChange()">
+                    <label for="all">All</label>
+                </li>
+                <li *ngFor="let category of (categories$ | async)">
+                    <input type="radio" [id]="category.slug" name="category"
+                           [value]="category.slug" (change)="handleCategoryChange(category)">
+                    <label [for]="category.slug">{{ category.name }}</label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="products-list">
+            <div class="product" *ngFor="let product of products$ | async">
+                <app-product-card [product]="product"/>
+            </div>
+        </div>
+
+    </div>
+    <app-paginator [pageSize]="30" [collectionSize]="totalLength" (pageChange)="handlePageChange($event)"/>
+
+</div>

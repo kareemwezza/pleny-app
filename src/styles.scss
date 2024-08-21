@@ -1,1 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --text-color: #344054;
+  --text-secondary-color: #667085;
+  --primary-color: #41CCCC;
+  --text-black: #1E1E1E;
+  --font-family: Inter, sans-serif;
+  --gutter: 2rem;
+  --radius: 8px;
+
+  --sm-screen-width: 768px;
+}
+
+// reset default css styling
+* {
+  margin: 0;
+
+  &, &::before, &::after {
+    box-sizing: border-box;
+  }
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+html {
+  font-size: calc(12px + 0.390625vw);
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  max-width: 1440px;
+}
+
+.primary-btn {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  border-radius: var(--radius);
+  background-color: var(--primary-color);
+  box-shadow: 0 1px 2px 0 #1018280D;
+  border: 1px solid #41CCCC;
+  margin-top: 0.5rem;
+  padding: 10px 18px;
+  cursor: pointer;
+}

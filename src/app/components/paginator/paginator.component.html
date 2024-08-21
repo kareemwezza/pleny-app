@@ -1,0 +1,33 @@
+@if (totalPages.length > 1) {
+    <nav>
+        <ul class="pagination">
+            <!-- previous button -->
+            @if (nextPreviousButtons) {
+                <li [class]="currentPage === 1 ? 'page-item disabled' : 'page-item'">
+                    <button class="page-link" (click)="previous()">
+                        <img src="assets/arrow-left.svg" alt="previous">
+                    </button>
+                </li>
+            }
+            <!-- page numbers -->
+            <ng-container *ngFor="let p of totalPages; index as i">
+                <li
+                        *ngIf="i + 1 >= currentPage - maxSize && i + 1 <= currentPage + maxSize"
+                        [class]="currentPage === i + 1 ? 'page-item active' : 'page-item'"
+                >
+                    <button class="page-link" (click)="selectPageNumber(i + 1)">
+                        {{ i + 1 }}
+                    </button>
+                </li>
+            </ng-container>
+            <!-- next button -->
+            @if (nextPreviousButtons) {
+                <li [class]="currentPage === totalPages.length ? 'page-item disabled' : 'page-item'">
+                    <button class="page-link last" (click)="next()">
+                        <img src="assets/arrow-left.svg" alt="previous">
+                    </button>
+                </li>
+            }
+        </ul>
+    </nav>
+}

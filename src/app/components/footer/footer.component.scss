@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  align-items: center;
+  background-color: #1D2939;
+  min-height: 100px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      color: #FFFFFF;
+      gap: 0.5rem;
+    }
+
+    .copyright {
+      color: #98A2B3;
+    }
+  }
+}

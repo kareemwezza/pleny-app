@@ -1,0 +1,31 @@
+nav {
+  padding: 0.5rem 1rem;
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+
+    .page-item {
+      .page-link {
+        width: 30px;
+        height: 30px;
+        background-color: #FFFFFF;
+        border: 0.7px solid #30375014;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.last {
+          transform: rotateY(180deg);
+        }
+      }
+
+      &.active .page-link {
+        background-color: var(--primary-color);
+      }
+    }
+  }
+}

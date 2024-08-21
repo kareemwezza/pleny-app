@@ -1,0 +1,32 @@
+<header class="top-navigation">
+    <div class="container">
+        <div class="top-navigation__content">
+            <div class="logo">
+                <img alt="clickTick logo" src="/assets/logo.svg">
+                <h3>ClickTik</h3>
+            </div>
+
+            <ul role="menu" class="navigation-menu">
+                <li role="menuitem">
+                    <a routerLink="/">Home</a>
+                </li>
+            </ul>
+
+            <div class="user-profile">
+                @if (isLoggedIn | async) {
+                    <div class="search-input">
+                        <img alt="search-icon" src="assets/search-icon.svg">
+                        <input (keyup.enter)="searchProducts($event)" placeholder="search">
+                    </div>
+                    <div class="cart-icon">
+                        <div class="cart-count">{{ product.cartProducts$ | async }}</div>
+                        <img alt="cart-icon" src="assets/cart.svg">
+                    </div>
+                    <a (click)="logout()">Logout</a>
+                } @else {
+                    <a routerLink="/auth/login">Login</a>
+                }
+            </div>
+        </div>
+    </div>
+</header>
